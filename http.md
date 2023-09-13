@@ -52,7 +52,12 @@ type = grass | name = bolb
     Request Headers
         content-type: application.json
 
-    Body
-    <
+    Request Body
+    {
     'name': "Teste"
-    >
+    }
+
+    Status Code : 200 OK
+        "Indica o que aconteceu com a requisição"
+        Response Header
+        Response Body
