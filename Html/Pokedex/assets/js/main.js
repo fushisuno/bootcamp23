@@ -23,3 +23,4 @@ pokeApi.getPokemons().then((pokemonList = []) => {
     .map(convertPokemonToLi)
     .join("");
 });
+  
