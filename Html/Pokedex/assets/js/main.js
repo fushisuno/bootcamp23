@@ -18,6 +18,7 @@ function convertPokemonToLi(pokemon) {
 }
 
 pokeApi.getPokemons().then((pokemonList = []) => {
+  console.log(pokemonList);
   document.querySelector("#pokemons").innerHTML += pokemonList
     .map(convertPokemonToLi)
     .join("");

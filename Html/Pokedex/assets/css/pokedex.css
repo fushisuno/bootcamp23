@@ -14,6 +14,12 @@
     border-radius: 1rem;
     
 }
+.pokemon:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 0.5s;
+    box-shadow: 12px 10px 8px 5px rgba(0, 0, 0, 0.4);
+}
 .normal{
     background-color: #a6a877;
 }
