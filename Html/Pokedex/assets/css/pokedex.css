@@ -6,6 +6,10 @@
     margin: 0;
 }
 
+.pokemons a{
+    text-decoration: none;
+}
+
 .pokemon{
     display: flex;
     flex-direction: column;
