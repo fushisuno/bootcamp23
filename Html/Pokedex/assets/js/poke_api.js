@@ -23,8 +23,8 @@ pokeApi.getPokemonDetail = (pokemon) => {
     .then(convertPokeApiDetailToPokemon);
 };
 
-pokeApi.getPokemons = (ofset = 0, limit = 200) => {
-  const url = `https://pokeapi.co/api/v2/pokemon?ofset=${ofset}&limit=${limit}`;
+pokeApi.getPokemons = (ofset, limit) => {
+  const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
 
   // Retorna uma Promise - 'Promessa de uma resposta'
   // Processamento assincrono - não obtem resposta imediata

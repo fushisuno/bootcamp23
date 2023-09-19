@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokemy</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-    />
 
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/pokedex.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokemy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 
-    <link rel="shortcut icon" href="./assets/img/pokemy-icon.png" type="image/x-icon">
-  </head>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/pokedex.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet" />
 
-  <body>
-    <section class="content">
-      <h1>Pokedex</h1>
-      <ol class="pokemons" id="pokemons">
-      </ol>
-    </section>
-    <script src="./assets/js/pokemon_model.js"></script>
-    <script src="./assets/js/poke_api.js"></script>
-    <script src="./assets/js/main.js"></script>
-  </body>
+  <link rel="shortcut icon" href="./assets/img/pokemy-icon.png" type="image/x-icon">
+</head>
+
+<body>
+  <section class="content">
+    <h1>Pokedex</h1>
+    <ol class="pokemons" id="pokemons">
+    </ol>
+
+    <div class="pagination">
+      <input type="button" value="Load more" id="btMore">
+    </div>
+
+  </section>
+  <script src="./assets/js/pokemon_model.js"></script>
+  <script src="./assets/js/poke_api.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+
 </html>
 
 
 
-        <!--             <li class="pokemon">
+<!--             <li class="pokemon">
                 <span class="number">#001</span>
                 <span class="name">Bulbasaur</span>
                 <div class="detail">
