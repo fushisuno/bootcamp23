@@ -1,13 +1,14 @@
 //Requisição HTTP
 
-URL: minhaurl <br>
+URL: minha_url <br>
     ${IP}/${path = caminho de identificação do recurso}
+    
 
-IP= meudominio
+IP = meudominio
     http://127.0.0.1:8080
 // Dns tranforma o dominio em ip
 
-Path= caminho
+Path = caminho
 
 
 // Tipo de request <br>

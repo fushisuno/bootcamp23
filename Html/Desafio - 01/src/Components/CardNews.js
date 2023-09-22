@@ -20,6 +20,7 @@ class CardNews extends HTMLElement {
     const linkTitle_not = document.createElement("a");
     linkTitle_not.textContent = this.getAttribute("title");
     linkTitle_not.href = this.getAttribute("url-link");
+    linkTitle_not.target = "_blank"
 
     const newsContent = document.createElement("p");
     newsContent.textContent = this.getAttribute("contet");
@@ -56,7 +57,7 @@ class CardNews extends HTMLElement {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-bottom: 1rem;
+        margin-top: 1.5rem;
     }
 
     .card-left{
