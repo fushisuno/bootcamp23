@@ -212,7 +212,7 @@ function ExibirNome(target: any){
 class Funcionario {}
 
 
-/// Documentar apends: decorations
+/// Documentar apends: class decorations
 function apiVersion(version: string){
     return (target: any) =>{
         Object.assign(target.prototype, {__version: version, __name: "kainã"})
@@ -223,5 +223,37 @@ function apiVersion(version: string){
 class Api{}
 
 const api = new Api();
-console.log(api.__version);
 
+// Atributes decorator
+function minLength(length: number){
+    return (target: any, key: string) => {
+        let _value = target[key];
+
+        const getter = () => "[play]" + _value;
+        const setter = (value: string) => {
+            if(value.length < length){
+                throw new Error(`Tamanho menor do que ${length}`)
+            }else{
+                _value = _value;
+            }
+        };
+
+        Object.defineProperty(target, key, {
+            get: getter,
+            set: setter,
+        });
+      
+    };
+}
+
+class Api_1{
+    @minLength(3)
+    name: string;
+
+    constructor(name: string){
+        this.name = name;
+    }
+}
+
+const api_1 = new Api_1("esops");
+console.log(api_1.name);

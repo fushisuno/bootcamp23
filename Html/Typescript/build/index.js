@@ -12,6 +12,12 @@ function printaObj(pessoa: heroi){
 printaObj({name: "Bruce Yane", vulgo: "batman"});
 console.log("Hola mundo");
 */
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -110,6 +116,12 @@ class Pessoa {
 }
 const p = new Pessoa(9, "João");
 console.log(p.sayHellou());
+// Data modifiers
+/*
+    public
+    private
+    protected
+*/
 class Character {
     constructor(stregth, skill) {
         this.stregth = stregth;
@@ -119,5 +131,56 @@ class Character {
         console.log(`Attack with ${this.stregth} points`);
     }
 }
+class Magician extends Character {
+    constructor(stregth, skill, magicPoints) {
+        super(stregth, skill);
+        this.magicPoints = magicPoints;
+    }
+}
 const p1 = new Character(10, 98);
+const p2 = new Magician(10, 98, 50);
 console.log(p1.attack());
+console.log(p2.attack());
+// Generics
+//function concatArray(items: any[]): any[] {
+//    return new Array().concat(...items);
+//}
+function concatArray(...items) {
+    return new Array().concat(...items);
+}
+const numArray = concatArray /*gereric*/([1, 5], [3]);
+const strArray = concatArray(["Felipe", "Goku"], ["Vegeta", "Majin boo"]);
+// numArray.push("Auoi")
+console.log(numArray);
+console.log(strArray);
+// npm install ts-node-dev -D: servidor para typescript
+// Decorations
+function ExibirNome(target) {
+    console.log(target);
+}
+let Funcionario = class Funcionario {
+};
+Funcionario = __decorate([
+    ExibirNome
+], Funcionario);
+/// Documentar apends: class decorations
+function apiVersion(version) {
+    return (target) => {
+        Object.assign(target.prototype, { __version: version, __name: "kainã" });
+    };
+}
+let Api = class Api {
+};
+Api = __decorate([
+    apiVersion("1,10")
+], Api);
+const api = new Api();
+console.log(api.__version);
+// Atributes decorator
+class Api_1 {
+    constructor(name) {
+        this.name = name;
+    }
+}
+const api_1 = new Api_1("produtos");
+console.log(api_1.name);
