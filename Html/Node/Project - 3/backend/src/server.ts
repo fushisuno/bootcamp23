@@ -1,15 +1,14 @@
 import express, { Request, Response } from 'express';
 import path from 'path';
 import dotenv from 'dotenv';
-import cors from 'cors';
+import cors  from 'cors';
 
 import routes from './routes/index';
-import exp from 'constants';
 
 dotenv.config();
 const server = express();
 
-//server.use(cors);
+server.use(cors);
 server.use(express.json())
 server.use(express.static(path.join(__dirname, '../public')));
 server.use(express.urlencoded({extended: true}));
