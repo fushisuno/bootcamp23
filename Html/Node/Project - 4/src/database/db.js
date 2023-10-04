@@ -19,9 +19,4 @@ async function getPgVersion(){
   const result = await sql`SELECT version()`;
   console.log(result);
 }
-
-getPgVersion();
-
-
-
 module.exports = sql;

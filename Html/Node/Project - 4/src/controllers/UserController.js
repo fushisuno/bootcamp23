@@ -1,11 +1,12 @@
+const User = require('../models/User');
 
 module.exports ={
   getStates: async (req, res) =>{
     res.json({states: "Super"});
   },
   info: async (req, res) =>{
-
-    return res.send('test');
+    const user = await User.findUserToken(req.query.token);
+    res.json({user});
   },
   editAction: async (req, res) =>{
 
