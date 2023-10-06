@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav{
+    position: sticky;
+    top: 0;
+}
+.navbar-nav {
+    margin-left: auto;
+}
+.navbar-nav .nav-item:last-child .nav-link {
+    color: #FF0000;
+    text-decoration: none;
+}
+.form-inline .btn {
+    background-color: #007BFF;
+    color: #fff;
+    border-color: #007BFF;
+}
+.form-inline .btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.custom-navbar{
+    background-color: rgb(21, 65, 117);
+}
+.navbar-nav .nav-item .nav-link {
+    color: #7293bc;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #007BFF;
+    border-bottom: 2px solid #6da0de;
+}
+
+.navbar-nav .nav-item:last-child .nav-link:hover {
+    border-bottom: 2px solid #FF0000; 
+    color: #FF0000;
+}
+
+/* FIM DO NAVBAR, ESTILIZAÇÃO DO VIDEO A SEGUIR*/
+video {
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+    opacity: 0.8;
+    max-height: 80vh;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    width: 100%;
+}
+
+.overlay-text h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.overlay-text p {
+    font-size: 18px;
+}
+
+.dark-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+.buttons button {
+    margin: 10px;
+}
+.btn-custom{
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    transition: background-color 0.3s, color 0.3s;
+}
+.btn-custom{
+    background-color: white;
+    color: black;
+}
+
+.box{
+    display: flex;
+    height: -auto;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.social-icons {
+    position: fixed;
+    bottom: 10px;
+    right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.social-icons a {
+    text-decoration: none !important;
+    color: #ffffff;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+
+.social-icons a:hover span {
+    display: inline;
+    opacity: 1;
+    transform: translateX(10px);
+    text-decoration: none;
+}
+
+.social-icons i {
+    text-decoration: none;
+    font-size: 24px;
+    margin-right: 5px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    transition: all 0.8 ease;
+}
+
+.social-icons span {
+    display: none;
+    opacity: 0;
+    color: #ffffff;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.social-icons a i.fab.fa-instagram + span {
+    color: rgb(255, 8, 160);
+}
+.social-icons a i.fab.fa-whatsapp + span {
+    color: rgb(116, 210, 116);
+}
+.social-icons a i.fab.fa-facebook + span {
+    color: rgb(40, 148, 255);
+}

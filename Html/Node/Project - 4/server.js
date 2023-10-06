@@ -4,7 +4,7 @@ const path = require('path');
 const cors = require('cors');
 
 const router = require('./src/routes');
-const sql = require('./src/database/db');
+require('./src/database/db');
 require('./src/database/tablesDB');
 
 const server = express();
