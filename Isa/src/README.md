@@ -1,11 +1,7 @@
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-  body{
-    font-family: 'Poppins', sans-serif;
-  }
-</style>
 <h1 align='center' style='letter-spacing: .3rem'> Iniciando projeto</h1>
-  <img src='https://media0.giphy.com/media/9LZTcawH3mc8V2oUqk/giphy.gif?cid=ecf05e47zxcpe3we3uo4lp35x2oj2hikpl7lc00kmgbrhyvo&ep=v1_gifs_search&rid=giphy.gif&ct=g' style='width: 100%; height: 28rem'>
+<div align='center'>
+  <img src='https://i.pinimg.com/originals/86/d7/5a/86d75a902dda5a4c6ac4b95d8a5afba4.gif'>
+</div>
 
 ##
 <div>
@@ -34,7 +30,7 @@
 </div>
 
 ##
-<div>
+<div align='center'>
 <h3 style='font-size: 2rem'>🧾 Resultado</h3>
    <img src='../public/img/tela_site.png' style='width: 100%;'>
 </div>
