@@ -7,7 +7,7 @@
 <div>
 <h3 style='font-size: 2rem'>💻 Primeiros passos</h3>
 <ul style='font-size: 1.5rem'>
-  <li>Primeiro instale o <a href='https://nodejs.org/en' style='text-decoration: none'>Node.js</a></li>
+  <li>Primeiro instale o <a href='https://nodejs.org/en' style='text-decoration: none' target="_blank">Node.js</a></li>
   <li>Segundo, abra o Vs Code com o projeto</li>
   <li>Terceiro, abra o terminal na pasta do projeto e digite os comandos a seguir:</li>
 </ul>
