@@ -31,7 +31,7 @@ module.exports ={
 
     const match = (data.inPassword == isUser.senha)? true: false;
     if(!match){
-      listError.push({"msg": 'Senha inválida'})
+      listError.push({"msg": 'Senha não corresponde'}) 
       res.render("pages/login",{erros: listError})
       return;
     }

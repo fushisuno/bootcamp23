@@ -9,9 +9,7 @@ async function createTableUser(){
       senha VARCHAR(255) NOT NULL,
       token VARCHAR(255) NOT NULL
     );
-    `.then(() => {
-      console.log('Tabela criada');
-    });
+    `
 }
 
 

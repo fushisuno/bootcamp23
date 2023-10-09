@@ -5,9 +5,7 @@ const User = {
     await sql`
     INSERT INTO usuarios (nome, email, senha, token)
     VALUES (${nome}, ${email}, ${senha}, ${token});
-    `.then(() => {
-      console.log('Usuario inserido');
-    });
+    `
   },
   updateUser: async  (nome, senha, token) => {
     await sql`
@@ -15,13 +13,13 @@ const User = {
     nome = ${nome},
     senha = ${senha},
     WHERE token = ${token}
-    `.then(() => console.log("Usuario modificado"));
+    `
   },
   deleteUser: async (token) => {
     await sql`
     DELETE FROM usuarios
     WHERE token = ${token};
-    `.then(() => console.log("Usuario deletado"));
+    `
   },
   findUserToken: async (token) => {
     let res;

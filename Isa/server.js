@@ -48,10 +48,10 @@ server.use(app);
 
 // Página 404
 server.use((req, res) => {
-  res.status(404).send('Página não encontrada!');
+  res.render('pages/404');
 });
 
-
+ 
 
 // Configurando PORT
 server.listen(process.env.PORT, ()=>{

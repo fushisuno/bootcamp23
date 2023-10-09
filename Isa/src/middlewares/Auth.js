@@ -1,24 +1,15 @@
 
 module.exports = {
   private: async (req, res, next) => {
-    if(!req.session.sessionUser){
-      res.json({notalowed: true})
-      return;
-    }
     let token = req.session.sessionUser
-    console.log(token)
+    if(!req.session.sessionUser){
+      res.redirect('/user/login');
+      return;
+    }
     if(token == ''){
-      res.json({notalowed: true})
+      res.redirect('/user/login');
       return;
     }
-    /*
-    let user = await User.findOne({token});
-    if(!user){
-      res.json({notalowed: true})
-      return;
-    }
-    */
-   
     next();
   }
 }
