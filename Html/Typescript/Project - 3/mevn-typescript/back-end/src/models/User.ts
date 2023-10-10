@@ -14,7 +14,7 @@ class User{
   }
 
   static async createTableUsers(){
-    Bd.sql`
+    await Bd.sql`
     CREATE TABLE IF NOT EXISTS usuarios (
       id SERIAL PRIMARY KEY,
       nome VARCHAR(255) NOT NULL,
@@ -25,11 +25,9 @@ class User{
     `
   }
 
-  static findUser(): string{
+  findUser(): string{
     return "usuarios";
   }
-
-  
 }
 
 
