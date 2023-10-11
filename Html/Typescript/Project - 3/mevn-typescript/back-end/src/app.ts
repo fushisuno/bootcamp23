@@ -15,6 +15,9 @@ app.use(express.json());
 dotenv.config();
 Bd.connect()
 
-app.use('/api', routesApp);
+app.get('/', (req, res) =>{
+  res.send('Parabéns, funcionou');
+});
 
+app.use('/api', routesApp);
 export default app;

@@ -4,44 +4,58 @@ const router  = Router();
 import User from '../models/User'
 import Task from '../models/Task'
 
-router.get('/', (req, res) =>{
-  res.send('Parabéns, funcionou');
+
+
+router.get('/tasks', async (req, res) =>{
+  const tasks = await Task.findTasks()
+  res.status(200).json({"task": tasks});
 });
 
-router.get('/task', (req, res) =>{
-  res.json({"mgs": ""});
+router.get('/user', async (req, res) =>{
+  res.json({"msg": 'ok'})
 });
 
-router.get('/user', (req, res) =>{
-  res.json({"mgs": ""});
-});
-
-router.get('/task/:id', (req, res) =>{
-  const task = new Task('', '', req.body.token);
-  task.findTaskToken()
-  res.send('Pegando Task');
+router.get('/task/:id', async (req, res) =>{
+  const { id } =  req.params;
+  const task = await Task.findTaskToken(id)
+  res.status(200).json({"task": task});
 });
 
 router.post('/task', async (req, res) =>{
   const {title, descricao, token} = req.body
-  const task = new Task(title, descricao, token)
-  const taskIn = await task.findTaskToken()
+  const taskIn = await Task.findTaskToken(token)
 
   if(taskIn == undefined || !taskIn){
+    const task = new Task(title, descricao, token)
     task.insertTask()
     res.status(201).json({"task": task});
   }else{
-    res.status(201).json({"error": {"msg": "Task já foi inserida"}});
+    res.status(406).json({"error": {"msg": "Task já foi inserida"}});
   }
-  
 });
 
-router.put('/task/:id', (req, res) =>{
-  res.send('Editando Task');
+router.put('/task/:id', async (req, res) =>{
+  const {title, descricao} = req.body
+  const { id } = req.params
+  const taskIn = await Task.findTaskToken(id)
+
+  if(taskIn){
+    const task = new Task(title, descricao, id)
+    task.updateTask()
+    res.status(201).json({"task": task});
+  }else{
+    res.status(406).json({"error": {"msg": "Task não existe"}});
+  }
 });
 
-router.delete('/task/:id', (req, res) =>{
-  res.send('Deletando Task');
+router.delete('/task/:id', async (req, res) =>{
+  const { id } = req.params
+  try{
+    Task.deleteTask(id);
+    res.status(200).json({"task": "Deletada"});
+  }catch{
+    res.status(406).json({"error": {"msg": "Task não deletada"}});
+  } 
 });
 
 export default router;

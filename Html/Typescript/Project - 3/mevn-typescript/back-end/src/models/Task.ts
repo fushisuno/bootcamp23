@@ -26,23 +26,41 @@ class Task{
     await Bd.sql`
     INSERT INTO tarefas (title, descricao, token)
     VALUES(${this.title}, ${this.descricao}, ${this.token});
-    `.then(() => console.log('Task insert'))
+    `
   }
-
-  async findTask(){
+  async updateTask(){
     await Bd.sql`
-      SELECT title, descricao FROM tarefas
-      WHERE token = ${this.token}
-      `.then((task) => {
-        return task.map((val) => val)[0];
-      });
+      UPDATE tarefas SET
+      title = ${this.title},
+      descricao = ${this.descricao}
+      WHERE token = ${this.token};
+    `
   }
 
-  async findTaskToken(){
+  static async deleteTask(token: string){
+    await Bd.sql`
+      DELETE FROM tarefas
+      WHERE token = ${token};
+    `
+  }
+
+  static async findTasks(){
     let result;
     await Bd.sql`
       SELECT title, descricao FROM tarefas
-      WHERE token = ${this.token}
+      ORDER BY id
+      `.then((task) => {
+        result = task.map((val) => val);
+      });
+      return result;
+  }
+
+  static async findTaskToken(token: string){
+    let result;
+    await Bd.sql`
+      SELECT title, descricao FROM tarefas
+      WHERE token = ${token}
+      ORDER BY id
       `.then((task) => {
         result = task.map((val) => val)[0];
       });

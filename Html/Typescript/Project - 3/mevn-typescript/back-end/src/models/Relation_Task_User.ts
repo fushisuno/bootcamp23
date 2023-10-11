@@ -26,10 +26,10 @@ class RelationTaskUser{
     `.then(() => console.log('Task-User insert'))
   }
 
-  async findTask(){
+  static async findTask(token: string){
     await Bd.sql`
       SELECT title, descricao FROM tarefas
-      WHERE token = ${this.}
+      WHERE token = ${token}
       `.then((task) => {
         return task.map((val) => val)[0];
       });
