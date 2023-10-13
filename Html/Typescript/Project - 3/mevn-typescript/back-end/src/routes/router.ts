@@ -22,9 +22,7 @@ router.get('/task/:id', async (req, res) =>{
 });
 
 router.post('/task', async (req: Request, res: Response) =>{
-  res.send("kaskakasdksakdakdkadksakdsa")
   const {title, descricao, token} = req.body
-  console.log("Title", title,"\nDescricao:", descricao, "\nToken:", token)
   const taskIn = await Task.findTaskToken(token)
 
   try {

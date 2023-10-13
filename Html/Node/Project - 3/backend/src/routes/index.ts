@@ -13,5 +13,12 @@ router.get('/test', (req: Request, res: Response) => {
   res.send("oie");
 });
 
+router.post('/test', (req: Request, res: Response) => {
+  console.log(req.body)
+  res.json({
+    'wqe': true
+  });
+});
+
 
 export default router;
