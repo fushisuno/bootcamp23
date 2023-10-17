@@ -17,11 +17,7 @@
   export default defineComponent({
     data(){
       return {
-        task: {
-          title: '',
-          descricao: '',
-          token: '12121'
-        } as Task
+        task: {} as Task
       };
     },
     methods: {

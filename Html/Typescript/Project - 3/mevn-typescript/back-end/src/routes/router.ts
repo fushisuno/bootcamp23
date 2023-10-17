@@ -1,4 +1,5 @@
 import { Router, Request, Response } from 'express'
+import { randomUUID } from 'crypto';
 const router  = Router();
 
 import User from '../models/User'
@@ -22,21 +23,18 @@ router.get('/task/:id', async (req, res) =>{
 });
 
 router.post('/task', async (req: Request, res: Response) =>{
-  const {title, descricao, token} = req.body
+  console.log(req.body)
+  const {title, descricao} = req.body
+  const token = randomUUID();
   const taskIn = await Task.findTaskToken(token)
 
-  try {
-    if(taskIn == undefined || !taskIn){
-      const task = new Task(title, descricao, token)
-      task.insertTask()
-      res.status(201).json({"task": task});
-    }else{
-      res.status(406).json({"error": {"msg": "Task já foi inserida"}});
-    }
-  } catch (error) {
-    console.log("Error no post")
+  if(taskIn == undefined || !taskIn){
+    const task = new Task(title, descricao, token)
+    task.insertTask()
+    res.status(201).json({"task": task});
+  }else{
+    res.status(406).json({"error": {"msg": "Task já foi inserida"}});
   }
- 
 });
 
 router.put('/task/:id', async (req, res) =>{
