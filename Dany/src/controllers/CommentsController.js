@@ -17,13 +17,12 @@ module.exports = {
                     msgList.push(value.msg);
                 }
             });
-            res.render("/", {erros: listError});
+            res.json({erros: listError});
             return;
         }
 
         const data = matchedData(req);
         const isUser = await User.findToken(data.inTokenUser);
-        console.log(isUser)
 
         if(isUser == undefined || !isUser){
             listError.push({"msg": 'Token de usuario inválido'});
@@ -37,4 +36,8 @@ module.exports = {
         }
         
     },
+    findComments: async (req, res) =>{
+        const comments = await Comments.findComments();
+        res.json({comments})
+    }
 }

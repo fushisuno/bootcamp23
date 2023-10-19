@@ -28,7 +28,8 @@ module.exports = {
             await User.insertUser(data.inNome, data.inDataNascimento, data.inEmail, data.inPassword, token);
             
             // criar sessão
-
+            req.session.sessionUser = isUser.token;
+            console.log("Seeion:", req.session.sessionUser);
 
             //Renderizar page 
             res.json({user: "inserido"});
@@ -71,6 +72,7 @@ module.exports = {
             return;
         }
       
+        req.session.sessionUser = isUser.token;
         res.json({user: isUser});
         return;
     },

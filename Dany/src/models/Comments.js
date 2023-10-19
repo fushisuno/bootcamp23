@@ -18,14 +18,28 @@ const Comments = {
         VALUES(${descricao}, ${tokenUser}, ${token});
         `
     },
+    findComments: async () => {
+        let res;
+        await Bd.sql`
+            SELECT comentarios.descricao, comentarios.token, usuarios.nome
+            FROM comentarios
+            INNER JOIN usuarios ON usuarios.token = comentarios.tokenUser
+            ORDER BY comentarios.id
+        `.then((comments) => {
+             res = comments.map((val) => val);
+        });
+
+        return res;
+    },
     findCommentsToken: async (token) => {
         let res;
         await Bd.sql`
             SELECT nome, descricao FROM usuarios, comentarios
             WHERE token = ${token}
         `.then((comments) => {
-             console.log(comments.map((val) => val));
+             res = comments.map((val) => val)[0];
         });
+        return res;
     },
 }
 

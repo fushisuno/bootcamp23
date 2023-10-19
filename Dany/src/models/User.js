@@ -35,7 +35,6 @@ const User = {
         `.then((usuarios) => {
             res = usuarios.map((val) => val)[0];
         });
-
         return res;
     },
     findEmail: async (email) => {
