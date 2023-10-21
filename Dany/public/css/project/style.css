@@ -6,8 +6,14 @@
 }
 body{
   background-color: #FEF2F4;
+  box-sizing: border-box
 }
 
+a{
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+}
 .container{
   width: 90%;
   display: flex;
@@ -17,7 +23,6 @@ body{
 
   margin-left: 5%;
 }
-
 .container_sec{
   width: 100%;
   display: flex;
@@ -31,9 +36,17 @@ body{
   flex-direction: column;
   justify-content: flex-start;
   padding-bottom: 2rem;
+
+  text-align: justify;
 }
 .container_sec .info_sec h2, p, input{
   padding-bottom: 0.625rem;
+}
+.container_sec .info_sec h2{
+  font-size: 1.5rem;
+}
+.container_sec .info_sec p{
+  font-size: 1rem;
 }
 .info_sec .btn{
     width: 100%;
@@ -42,22 +55,190 @@ body{
     justify-content: center;
     align-items: center;
 }
-.info_sec .btn input[type="button"]{
+.info_sec .btn a input[type="button"]{
   width: 100%;
-  font-size: 1.2rem;
-  padding: 0.625rem 0;
+  font-size: 1rem;
+  padding: 0.625rem 1rem;
 
   background-color: #FCC8D1;
   color: black;
   border: 0;
   border-radius: 1rem;
 }
-.btn input[type="button"]:hover{
+.btn a input[type="button"]:hover{
   cursor: pointer;
   background-color: #d31c3a;
   color: #FCC8D1;
 }
 
 .container_sec .img_sec{
-  width: 40%;
+  width: 100%;
+}
+.img_sec img{
+  width: 100%;
+  height: 95%;
+  border: 0;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.line_sec{
+  width: 100%;
+  height: .12rem;
+
+  border: 0;
+  border-radius: 1rem;
+  background-color: #B8B9BB;
+  margin-top: 1rem;
+}
+
+.blog_cards{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards{
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards .card{
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.card img{
+  width: 100%;
+  border: 0;
+  border-radius: 1rem;
+}
+.card strong{
+  padding-left: .5rem;
+  font-size: 1.2rem;
+}
+
+.card_rigth{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card_rigth .img_card_rigth img{
+  width: 100%;
+
+  border: 0;
+  border-radius: 1rem;
+}
+
+.card_rigth .info_card_rigth{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem 0;
+}
+.info_card_rigth p{
+  text-align: justify;
+}
+.btn_card_rigth{
+  width: 100%;
+}
+.info_card_rigth .btn_card_rigth a input[type="button"]{
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.625rem 1rem;
+
+  background-color: #FCC8D1;
+  color: black;
+  border: 0;
+  border-radius: 1rem;
+}
+.info_card_rigth a input[type="button"]:hover{
+  cursor: pointer;
+  background-color: #d31c3a;
+  color: #FCC8D1;
+}
+
+
+@media screen and (min-width: 768px){
+  .container_sec{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .container_sec .info_sec{
+    width: 50%;
+  }
+  .info_sec .btn{
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .container_sec .img_sec{
+    width: 40%;
+  }
+
+  .blog_cards{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;;
+    align-items: flex-start;
+    padding: 3rem 0;
+  }
+  .blog_cards .cards{
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .blog_cards .cards .card{
+    width: 15rem;
+    padding: 0 .625rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .blog_cards .card_rigth_sec{
+    width: 35%;
+
+  }
+  .card_rigth_sec .cards_rigth{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .card_rigth_sec .cards_rigth .card_rigth{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+  }
+
+  .card_rigth .img_card_rigth {
+    width: 50%;
+  }
+  .card_rigth .img_card_rigth img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card_rigth .info_card_rigth{
+    width: 40%;
+  }
 }
